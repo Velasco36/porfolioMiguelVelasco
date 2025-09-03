@@ -14,10 +14,10 @@ const Header = () => {
           <Link href="/" className="flex items-center space-x-3">
             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md">
               <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                N
+                M
               </span>
             </div>
-            <span className="text-xl font-bold text-white">NextJS App</span>
+            <span className="text-xl font-bold text-white">Dev Miguel Velasco</span>
           </Link>
 
           {/* Navegación Desktop */}
@@ -28,7 +28,7 @@ const Header = () => {
             <Link href="/services" className="text-white hover:text-purple-200 transition-colors font-medium">
               Servicios
             </Link>
-          
+
             <Link href="/contact" className="text-white hover:text-purple-200 transition-colors font-medium">
               Contacto
             </Link>
