@@ -56,6 +56,11 @@
 }
 
 
+ @media (max-width: 768px) {
+    .hiddes-test {
+        display: none;
+    }
+ }
 /* Fin carrusel */
 
 /* timeline */

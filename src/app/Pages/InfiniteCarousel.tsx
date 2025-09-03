@@ -25,7 +25,7 @@ const InfiniteCarousel = () => {
   const duplicatedTechnologies = [...technologies, ...technologies];
 
   return (
-    <section className="w-full   ">
+    <section className="w-full hiddes-test  ">
       <div className="container mx-auto px-4">
         {/* <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
           Tecnologías que uso
