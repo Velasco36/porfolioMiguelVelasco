@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 const ProjectsSection = () => {
-  const [hoveredProject, setHoveredProject] = useState(null);
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   // videos
   const TW_VIDEO = "/video/Tw.mp4";
