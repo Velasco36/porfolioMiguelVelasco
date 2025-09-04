@@ -1,3 +1,29 @@
+/* iam */
+/* Estilos para el efecto typewriter */
+.typewriter-cursor {
+  font-weight: normal;
+  color: #ffffff;
+  margin-left: 2px;
+  display: inline-block;
+}
+
+.typewriter-cursor.blink {
+  animation: blink 1s infinite;
+}
+
+.typewriter-cursor.hidden {
+  display: none;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
 /* carrusel */
 .carruselContainerHome {
     overflow: hidden;
@@ -56,7 +82,40 @@
 }
 
 
- @media (max-width: 768px) {
+ /* @media (max-width: 768px) {
+    .carruselContainerHome {
+        width: 500px;
+        min-width: 322px;
+     }
+    .hiddes-test {
+        display: none;
+    }
+ } */
+
+  @media (max-width: 576px) {
+    /* .carruselContainerHome {
+        width: 327px;
+        min-width: 322px;
+        max-width: 500px;
+     } */
+     .iconContainer {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(168, 85, 247, .2);
+        border-radius: 16px;
+        padding: 10px;
+        transition: all .3s;
+    }
+    .carruselItem {
+        flex-direction: column;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        margin: 0 20px;
+        display: flex;
+    }
     .hiddes-test {
         display: none;
     }
