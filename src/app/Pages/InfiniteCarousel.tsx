@@ -25,8 +25,8 @@ const InfiniteCarousel = () => {
   const duplicatedTechnologies = [...technologies, ...technologies];
 
   return (
-    <section className="w-full hiddes-test  ">
-      <div className="container mx-auto px-4">
+    <section className="w-full   ">
+      <div className=" mx-auto" style={{ width: '95vw' }}>
         {/* <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
           Tecnologías que uso
         </h2> */}
@@ -41,7 +41,7 @@ const InfiniteCarousel = () => {
                     alt={tech.name}
                     width={80}
                     height={80}
-                    className="w-16 h-16 md:w-20 md:h-20 object-contain"
+                    className="w-10 h-10 md:w-20 md:h-20 object-contain"
                   />
                 </div>
                 <p className="techName">{tech.name}</p>
