@@ -93,164 +93,157 @@ const Testimonios = () => {
     {
       id: 1,
       mockup: (
-        <div className="relative mx-auto w-64 h-[520px] bg-black rounded-[3rem] p-2 shadow-2xl">
-          <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
-            {/* Status bar */}
-            <div className="bg-white h-6 flex justify-between items-center px-6 pt-2">
-              <span className="text-xs font-semibold">15:40</span>
-              <div className="flex space-x-1">
-                <div className="w-4 h-2 bg-gray-300 rounded-sm"></div>
-                <span className="text-xs">46%</span>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="p-6 pt-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Bienvenido</h3>
-              <p className="text-gray-600 mb-8">Regístrate en Tu Wallet</p>
-
-              {/* Logo placeholder */}
-              <div className="flex justify-center mb-8">
-                <div className="w-20 h-20 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-2xl">W</span>
-                </div>
-              </div>
-
-              {/* Form fields */}
-              <div className="space-y-4">
-                <div className="h-12 bg-gray-100 rounded-lg"></div>
-                <div className="h-12 bg-gray-100 rounded-lg"></div>
-                <div className="h-12 bg-green-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-semibold">Crear Cuenta</span>
-                </div>
-              </div>
-
-              <div className="mt-8 space-y-2">
-                <div className="h-2 bg-green-200 rounded-full w-3/4"></div>
-                <div className="h-2 bg-green-200 rounded-full w-1/2"></div>
-              </div>
+       <div className="relative mx-auto w-64 h-[520px] bg-black rounded-[3rem] p-2 shadow-2xl">
+        <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
+          {/* Status bar */}
+          <div className="bg-whiteh-6 flex justify-between items-center px-6 pt-2">
+            <span className="text-xs font-semibold text-black">15:40</span>
+            <div className="flex space-x-1 items-center">
+              <div className="w-4 h-2 bg-gray-500 rounded-sm"></div>
+              <span className="text-xs text-black">46%</span>
             </div>
           </div>
+
+          {/* Chat header */}
+          <div className="flex items-center p-4  border-gray-800 border-b-[0.5px]">
+            <ChevronLeft className="w-5 h-5 text-black" />
+            <div className="ml-2 flex-1">
+              <p className="font-semibold text-black">Miguel Velasco</p>
+              <p className="text-xs text-gray-400">En línea</p>
+            </div>
+          </div>
+
+          {/* Chat content */}
+          <div className="p-4 h-[calc(100%-88px)] overflow-y-auto ">
+
+            <div className="message received mb-4">
+              <div className="message-content bg-gray-700 rounded-lg p-3 max-w-[80%]">
+                <p className="text-black">¿Qué te parece Miguel Velasco</p>
+              </div>
+            </div>
+
+            {/* Indicador de escritura */}
+            <div className="flex items-center mb-4">
+              <div className="w-8 h-8 rounded-full bg-white border border-gray-400 shadow-2xl flex items-center justify-center mr-2">
+                <span className="text-black font-bold text-xs">MV</span>
+              </div>
+              <div className=" bg-white  rounded-xl p-3">
+                <div className="flex space-x-1">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce animation-delay-100"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce animation-delay-200"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce animation-delay-300"></div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
         </div>
+      </div>
       )
     },
     {
       id: 2,
       mockup: (
         <div className="relative mx-auto w-64 h-[520px] bg-black rounded-[3rem] p-2 shadow-2xl">
-          <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
-            {/* Status bar */}
-            <div className="bg-white h-6 flex justify-between items-center px-6 pt-2">
-              <span className="text-xs font-semibold">15:40</span>
-              <div className="flex space-x-1">
-                <div className="w-4 h-2 bg-gray-300 rounded-sm"></div>
-                <span className="text-xs">46%</span>
-              </div>
-            </div>
-
-            {/* Header */}
-            <div className="flex items-center p-4">
-              <ChevronLeft className="w-5 h-5" />
-              <span className="ml-2 font-medium">Volver</span>
-            </div>
-
-            {/* Content */}
-            <div className="p-6 pt-2">
-              <p className="text-sm text-gray-600 mb-6">Carga los documentos que se solicitan a continuación</p>
-
-              {/* Document options */}
-              <div className="space-y-4">
-                <div className="border border-blue-300 rounded-lg p-4 bg-blue-50">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-6 bg-blue-600 rounded flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">ID</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-sm">Cédula/DNI/Licencia/Pasaporte</p>
-                      <p className="text-xs text-gray-600">Documento frontal del documento de identidad</p>
-                    </div>
-                  </div>
-                  <div className="mt-3 h-8 bg-blue-600 rounded flex items-center justify-center">
-                    <span className="text-white text-sm">Tomar Foto</span>
-                  </div>
-                </div>
-
-                <div className="border border-blue-300 rounded-lg p-4 bg-blue-50">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-6 bg-blue-600 rounded flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">ID</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-sm">Cédula/DNI/Licencia/Pasaporte</p>
-                      <p className="text-xs text-gray-600">Documento trasero del documento de identidad</p>
-                    </div>
-                  </div>
-                  <div className="mt-3 h-8 bg-blue-600 rounded flex items-center justify-center">
-                    <span className="text-white text-sm">Tomar Foto</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 h-12 bg-gray-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-semibold">Enviar</span>
-              </div>
+        <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
+          {/* Status bar */}
+          <div className="bg-whiteh-6 flex justify-between items-center px-6 pt-2">
+            <span className="text-xs font-semibold text-black">15:40</span>
+            <div className="flex space-x-1 items-center">
+              <div className="w-4 h-2 bg-gray-500 rounded-sm"></div>
+              <span className="text-xs text-black">46%</span>
             </div>
           </div>
+
+          {/* Chat header */}
+          <div className="flex items-center p-4  border-gray-800 border-b-[0.5px]">
+            <ChevronLeft className="w-5 h-5 text-black" />
+            <div className="ml-2 flex-1">
+              <p className="font-semibold text-black">Miguel Velasco</p>
+              <p className="text-xs text-gray-400">En línea</p>
+            </div>
+          </div>
+
+          {/* Chat content */}
+          <div className="p-4 h-[calc(100%-88px)] overflow-y-auto ">
+
+            <div className="message received mb-4">
+              <div className="message-content bg-gray-700 rounded-lg p-3 max-w-[80%]">
+                <p className="text-black">¿Qué te parece Miguel Velasco</p>
+              </div>
+            </div>
+
+            {/* Indicador de escritura */}
+            <div className="flex items-center mb-4">
+              <div className="w-8 h-8 rounded-full bg-white border border-gray-400 shadow-2xl flex items-center justify-center mr-2">
+                <span className="text-black font-bold text-xs">MV</span>
+              </div>
+              <div className=" bg-white  rounded-xl p-3">
+                <div className="flex space-x-1">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce animation-delay-100"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce animation-delay-200"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce animation-delay-300"></div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
         </div>
+      </div>
       )
     },
     {
       id: 3,
       mockup: (
-        <div className="relative mx-auto w-64 h-[520px] bg-black rounded-[3rem] p-2 shadow-2xl">
-          <div className="w-full h-full bg-gray-700 rounded-[2.5rem] overflow-hidden relative">
-            {/* Status bar */}
-            <div className="bg-transparent h-6 flex justify-between items-center px-6 pt-2">
-              <span className="text-xs font-semibold text-white">15:40</span>
-              <div className="flex space-x-1">
-                <div className="w-4 h-2 bg-gray-700 rounded-sm"></div>
-                <span className="text-xs text-white">46%</span>
-              </div>
-            </div>
-
-            {/* Header */}
-            <div className="p-6 pt-4">
-              <div className="flex justify-between items-center mb-6">
-                <div>
-                  <p className="text-gray-400 text-sm">Hola,</p>
-                  <h2 className="text-xl font-bold text-white">Usuario</h2>
-                </div>
-                <div className="w-10 h-10 bg-blue-500 rounded-full"></div>
-              </div>
-
-              {/* Balance card */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg mb-6">
-                <p className="text-gray-600 text-sm mb-2">Saldo total</p>
-                <h3 className="text-2xl font-bold mb-4">$12,450.00</h3>
-                <div className="flex space-x-4">
-                  <div className="flex-1 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-sm font-semibold">Enviar</span>
-                  </div>
-                  <div className="flex-1 h-10 bg-green-500 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-sm font-semibold">Recibir</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Quick actions */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white rounded-xl p-4 shadow-lg">
-                  <div className="w-8 h-8 bg-purple-500 rounded-full mb-2"></div>
-                  <p className="text-sm font-semibold">Transferir</p>
-                </div>
-                <div className="bg-white rounded-xl p-4 shadow-lg">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full mb-2"></div>
-                  <p className="text-sm font-semibold">Pagar</p>
-                </div>
-              </div>
+       <div className="relative mx-auto w-64 h-[520px] bg-black rounded-[3rem] p-2 shadow-2xl">
+        <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
+          {/* Status bar */}
+          <div className="bg-whiteh-6 flex justify-between items-center px-6 pt-2">
+            <span className="text-xs font-semibold text-black">15:40</span>
+            <div className="flex space-x-1 items-center">
+              <div className="w-4 h-2 bg-gray-500 rounded-sm"></div>
+              <span className="text-xs text-black">46%</span>
             </div>
           </div>
+
+          {/* Chat header */}
+          <div className="flex items-center p-4  border-gray-800 border-b-[0.5px]">
+            <ChevronLeft className="w-5 h-5 text-black" />
+            <div className="ml-2 flex-1">
+              <p className="font-semibold text-black">Miguel Velasco</p>
+              <p className="text-xs text-gray-400">En línea</p>
+            </div>
+          </div>
+
+          {/* Chat content */}
+          <div className="p-4 h-[calc(100%-88px)] overflow-y-auto ">
+
+            <div className="message received mb-4">
+              <div className="message-content bg-gray-700 rounded-lg p-3 max-w-[80%]">
+                <p className="text-black">¿Qué te parece Miguel Velasco</p>
+              </div>
+            </div>
+
+            {/* Indicador de escritura */}
+            <div className="flex items-center mb-4">
+              <div className="w-8 h-8 rounded-full bg-white border border-gray-400 shadow-2xl flex items-center justify-center mr-2">
+                <span className="text-black font-bold text-xs">MV</span>
+              </div>
+              <div className=" bg-white  rounded-xl p-3">
+                <div className="flex space-x-1">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce animation-delay-100"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce animation-delay-200"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce animation-delay-300"></div>
+                </div>
+              </div>
+            </div>
+
+           
+          </div>
         </div>
+      </div>
       )
     },
     {
