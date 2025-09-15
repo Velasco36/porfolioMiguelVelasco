@@ -91,7 +91,7 @@ const IAM = () => {
   }, []);
 
   return (
-    <section className="w-full justify-items-start py-16 px-4 mt-12">
+    <section className="w-full justify-items-start py-16 px-4 mt-12 hide-scrollbar">
       {/* Mensaje informativo si el usuario no ha interactuado */}
       {!userHasInteracted && (
         <div className="fixed top-4 right-4 bg-purple-600/90 text-white px-4 py-2 rounded-lg text-sm backdrop-blur-sm z-50">
