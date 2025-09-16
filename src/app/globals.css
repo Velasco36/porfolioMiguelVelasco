@@ -23,3 +23,7 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.line-h-11 {
+  line-height: 11px !important;
+}
