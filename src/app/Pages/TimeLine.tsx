@@ -29,7 +29,7 @@ const timelineData = [
   }
 ];
   return (
-    <section className="py-16 full-width-blur">
+    <section id='lineTime' className="py-16 full-width-blur">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
 
