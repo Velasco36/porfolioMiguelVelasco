@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react'
 export default function Modelo() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
+  const audioRef = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +35,38 @@ export default function Modelo() {
     }
   }, [])
 
+  // Función para hacer scroll suave a una sección
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 80; // Ajusta según la altura real de tu header
+      const elementPosition = element.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Función para reproducir el sonido y hacer scroll
+  const handleButtonClick = (sectionId: string) => {
+    // Reproducir sonido
+    playButtonSound();
+    // Hacer scroll a la sección
+    scrollToSection(sectionId);
+  };
+
+  // Función para reproducir el sonido al hacer clic en los botones
+  const playButtonSound = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0 // Reiniciar el sonido
+      audioRef.current.play().catch(error => {
+        console.log("Error al reproducir sonido:", error)
+      })
+    }
+  }
+
   // Manejar cuando el video termine para reiniciarlo
   const handleVideoEnd = () => {
     if (videoRef.current) {
@@ -46,6 +79,12 @@ export default function Modelo() {
 
   return (
     <section className="intro-section hide-scrollbar" ref={sectionRef}>
+      {/* Elemento de audio para el sonido de los botones */}
+      <audio ref={audioRef} preload="auto">
+        <source src="/sounds/riser-swoosh2.mp3" type="audio/mpeg" />
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+
       <video
         ref={videoRef}
         className="fullscreen-video"
@@ -61,14 +100,29 @@ export default function Modelo() {
       </div>
 
       <div className="footer-buttons">
-        <button className="action-button">
+        <button
+          className="action-button"
+          onClick={() => handleButtonClick('proyects')}
+        >
           Proyectos
         </button>
-        <button className="action-button">
+        <button
+          className="action-button"
+          onClick={() => handleButtonClick('lineTime')}
+        >
           Trabajos
         </button>
-        <button className="action-button">
+        <button
+          className="action-button"
+          onClick={() => handleButtonClick('iam')}
+        >
           Quien soy
+        </button>
+         <button
+          className="action-button"
+          onClick={() => handleButtonClick('testimonio')}
+        >
+          Testimonios
         </button>
       </div>
     </section>
