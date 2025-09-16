@@ -45,7 +45,7 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <div className="min-h-screen  py-16 px-4  full-width-blur">
+    <section id="proyects" className="min-h-screen  py-16 px-4  full-width-blur">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -170,7 +170,7 @@ const ProjectsSection = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
