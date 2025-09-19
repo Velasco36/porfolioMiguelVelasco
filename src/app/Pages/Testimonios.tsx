@@ -3,6 +3,22 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+
+
+interface ContactData {
+  initials: string;
+  avatarColor: string;
+  name: string;
+  // añade otras propiedades que uses
+  email?: string;
+  message?: string;
+}
+
+interface TestimonioProps {
+  contactData: ContactData; // Ahora es un objeto, no un string
+  responseText: string;
+  isActive: boolean;
+}
 const Testimonios = () => {
   // Estado para controlar el índice del testimonio actual
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,7 +26,7 @@ const Testimonios = () => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   // Componente animado para cada testimonio
-  const AnimatedChatTestimonio = ({ contactData, responseText, isActive }: any) => {
+ const AnimatedChatTestimonio = ({ contactData, responseText, isActive }: TestimonioProps) => {
     // Estado para controlar si se muestra la respuesta final
     const [showResponse, setShowResponse] = useState(false);
     // Estado para controlar la animación de puntos suspensivos
