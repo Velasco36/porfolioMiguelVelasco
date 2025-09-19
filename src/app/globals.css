@@ -27,3 +27,19 @@
 .line-h-11 {
   line-height: 11px !important;
 }
+
+
+ .full-width-blur {
+    width: 99vw;
+    padding: 4rem 0; /* py-16 equivalente a 4rem (16px * 4) */
+    background-color: #080527; /* Fondo semitransparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+}
+
+
+.bg-contact {
+    width: 100vw;
+
+    background-color: #312c68; /* Fondo semitransparente */
+}
