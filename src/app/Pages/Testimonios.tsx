@@ -10,7 +10,7 @@ const Testimonios = () => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   // Componente animado para cada testimonio
-  const AnimatedChatTestimonio = ({ contactData, responseText, isActive }) => {
+  const AnimatedChatTestimonio = ({ contactData, responseText, isActive }: any) => {
     // Estado para controlar si se muestra la respuesta final
     const [showResponse, setShowResponse] = useState(false);
     // Estado para controlar la animación de puntos suspensivos
@@ -20,12 +20,13 @@ const Testimonios = () => {
 
     useEffect(() => {
       // Solo animar si el slide está activo (en el centro)
-      if (!isActive) {
-        // Reset states cuando no está activo
-        setShowResponse(false);
-        setShowTyping(true);
-        return;
-      }
+
+      // if (!isActive) {
+      //   // Reset states cuando no está activo
+      //   setShowResponse(false);
+      //   setShowTyping(true);
+      //   return;
+      // }
 
       // Reiniciar estados al comenzar nueva animación
       setShowResponse(false);
@@ -35,7 +36,7 @@ const Testimonios = () => {
       const responseTimer = setTimeout(() => {
         setShowTyping(false); // Ocultar indicador de escritura
         setShowResponse(true); // Mostrar respuesta
-      }, 3000);
+      }, 2000);
 
       // Timer para reiniciar la animación cada 10 segundos
       const resetTimer = setTimeout(() => {
@@ -174,7 +175,7 @@ const Testimonios = () => {
    * @param {number} index - Índice del slide
    * @returns {string} - Posición del slide ('center', 'left', 'right', 'hidden')
    */
-  const getSlidePosition = (index) => {
+  const getSlidePosition = (index: number) => {
     const total = testimonios.length;
     const diff = (index - currentIndex + total) % total;
 
@@ -189,25 +190,25 @@ const Testimonios = () => {
    * @param {string} position - Posición del slide
    * @returns {string} - Clases CSS para la posición
    */
-  const getSlideStyles = (position) => {
+  const getSlideStyles = (position: string) => {
     const baseStyles = 'absolute top-0 transition-all duration-700 ease-in-out';
 
-    switch (position) {
-      case 'center':
-        // Slide principal: centrado, escalado al 110%, máxima opacidad
-        return `${baseStyles} left-1/2 transform -translate-x-1/2 scale-110 z-30 opacity-100`;
-      case 'left':
-        // Slide izquierdo: menor escala, parcialmente transparente
-        return `${baseStyles} left-[15%] transform -translate-x-1/2 scale-90 z-20 opacity-70`;
-      case 'right':
-        // Slide derecho: menor escala, parcialmente transparente
-        return `${baseStyles} right-[15%] transform translate-x-1/2 scale-90 z-20 opacity-70`;
-      case 'hidden':
-        // Slides ocultos: mínima escala, transparentes, sin interacción
-        return `${baseStyles} left-1/2 transform -translate-x-1/2 scale-80 z-10 opacity-0 pointer-events-none`;
-      default:
-        return `${baseStyles} opacity-0 pointer-events-none`;
-    }
+   switch (position) {
+  case 'center':
+    // Slide principal: centrado, escalado al 110%, máxima opacidad
+    return `${baseStyles} left-1/2 transform -translate-x-1/2 scale-110 z-30 opacity-100`;
+  case 'left':
+    // Slide izquierdo: menor escala, parcialmente transparente con blur
+    return `${baseStyles} left-[15%] transform -translate-x-1/2 scale-90 z-20 opacity-70 blur-sm`;
+  case 'right':
+    // Slide derecho: menor escala, parcialmente transparente con blur
+    return `${baseStyles} right-[15%] transform translate-x-1/2 scale-90 z-20 opacity-70 blur-sm`;
+  case 'hidden':
+    // Slides ocultos: mínima escala, transparentes, sin interacción
+    return `${baseStyles} left-1/2 transform -translate-x-1/2 scale-80 z-10 opacity-0 pointer-events-none`;
+  default:
+    return `${baseStyles} opacity-0 pointer-events-none`;
+}
   };
 
   /**
@@ -236,7 +237,7 @@ const Testimonios = () => {
    * Navega directamente a un slide específico
    * @param {number} index - Índice del slide destino
    */
-  const goToSlide = (index) => {
+  const goToSlide = (index: number) => {
     if (isAnimating || index === currentIndex) return;
     setIsAnimating(true);
     setCurrentIndex(index);
@@ -334,7 +335,7 @@ const Testimonios = () => {
         </div>
       </div>
 
-    
+
     </section>
   );
 };
