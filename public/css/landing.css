@@ -123,13 +123,7 @@
 /* Fin carrusel */
 
 /* timeline */
- .full-width-blur {
-            width: 99vw;
-            padding: 4rem 0; /* py-16 equivalente a 4rem (16px * 4) */
-            background-color: #080527; /* Fondo semitransparente */
-            backdrop-filter: blur(10px); /* Efecto de desenfoque */
-            -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
-        }
+
 /* CSS Original con modificaciones para tema oscuro */
   .vertical-timeline * {
           -webkit-box-sizing: border-box;
