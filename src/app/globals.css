@@ -6,7 +6,7 @@
 }
 
 .bg-headers {
-  background: #0a004900;
+  background-color: #000823;
 }
 
 /* En tu archivo CSS */
@@ -30,7 +30,7 @@
 
 
  .full-width-blur {
-    width: 99vw;
+    width: 100vw;
     padding: 4rem 0; /* py-16 equivalente a 4rem (16px * 4) */
     background-color: #080527; /* Fondo semitransparente */
     backdrop-filter: blur(10px); /* Efecto de desenfoque */
