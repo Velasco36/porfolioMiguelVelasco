@@ -129,6 +129,35 @@ const Header = () => {
                 )}
               </button>
             </nav>
+             <nav className="md:hidden flex space-x-8 items-center">
+            
+
+              {/* Botón sonido */}
+              <button
+                onClick={toggleSound}
+                className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors cursor-pointer group"
+                aria-label={isSoundPlaying ? "Silenciar audio" : "Reproducir audio"}
+              >
+                {isSoundPlaying ? (
+                  <img src="/Gifs/sound.gif" alt="Sonido reproduciéndose" className="h-6 w-6" />
+                ) : (
+                  <svg
+                    className="w-6 h-6 text-gray-300 group-hover:text-white transition-colors"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15.536 8.464a5 5 0 010 7.072M12 6a9 9 0 010 12m-4.5-9.5L12 3v18l-4.5-4.5H4a1 1 0 01-1-1v-7a1 1 0 011-1h3.5z"
+                    />
+                    <line x1="5" y1="19" x2="19" y2="5" stroke="currentColor" strokeWidth={2} />
+                  </svg>
+                )}
+              </button>
+            </nav>
           </div>
         </div>
       </header>
