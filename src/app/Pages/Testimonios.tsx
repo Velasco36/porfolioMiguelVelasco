@@ -25,6 +25,24 @@ const Testimonios = () => {
   // Estado para prevenir múltiples animaciones simultáneas
   const [isAnimating, setIsAnimating] = useState(false);
 
+   const [currentTime, setCurrentTime] = useState('');
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      setCurrentTime(now.toLocaleTimeString('es-ES', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      }));
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   // Componente animado para cada testimonio
  const AnimatedChatTestimonio = ({ contactData, responseText, isActive }: TestimonioProps) => {
     // Estado para controlar si se muestra la respuesta final
@@ -66,6 +84,8 @@ const Testimonios = () => {
       };
     }, [isActive, animationKey]); // Dependencias: isActive y animationKey
 
+
+
     return (
       <div className="relative mx-auto w-64 h-[520px] bg-black rounded-[3rem] p-2 shadow-2xl">
         {/* Pantalla del teléfono */}
@@ -73,7 +93,9 @@ const Testimonios = () => {
 
           {/* Barra de estado del teléfono */}
           <div className="bg-white h-6 flex justify-between items-center px-6 pt-2">
-            <span className="text-xs font-semibold text-black">15:40</span>
+            <span className="text-xs font-semibold text-black">
+            {currentTime || '--:--'}
+          </span>
             <div className="flex space-x-1 items-center">
               <div className="w-4 h-2 bg-gray-500 rounded-sm"></div>
               <span className="text-xs text-black">46%</span>
