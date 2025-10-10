@@ -78,7 +78,7 @@ export default function Modelo() {
   }
 
   return (
-    <section className="intro-section hide-scrollbar" ref={sectionRef}>
+    <section className="intro-section hide-scrollbar" ref={sectionRef} id='background-mask'>
       {/* Elemento de audio para el sonido de los botones */}
       <audio ref={audioRef} preload="auto">
         <source src="/sounds/riser-swoosh2.mp3" type="audio/mpeg" />

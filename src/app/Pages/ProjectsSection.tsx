@@ -1,19 +1,33 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 const ProjectsSection = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [loadingVideos, setLoadingVideos] = useState<{ [key: number]: boolean }>({});
+  const videoRefs = useRef<{ [key: number]: HTMLVideoElement | null }>({});
 
   // videos
   const TW_VIDEO = "/video/Tw.mp4";
   const Modelo_VIDEO = "/video/Modelo2.mp4";
   const Frepool_VIDEO = "/video/freepool.mp4";
 
-//  images
+  // images
   const TW_IMAGES = "/images/tw.webp";
   const TW_3D = "/images/modeloRender.png";
   const MAP_images = "/images/map.jpg";
 
+  // Manejar la carga del video
+  const handleVideoLoadStart = (projectId: number) => {
+    setLoadingVideos(prev => ({ ...prev, [projectId]: true }));
+  };
+
+  const handleVideoCanPlay = (projectId: number) => {
+    setLoadingVideos(prev => ({ ...prev, [projectId]: false }));
+  };
+
+  const handleVideoError = (projectId: number) => {
+    setLoadingVideos(prev => ({ ...prev, [projectId]: false }));
+  };
 
   // Datos de ejemplo para los proyectos
   const projects = [
@@ -30,7 +44,7 @@ const ProjectsSection = () => {
       title: "Animación de desplazamiento 3D",
       description: "Desarrollo de una animación de desplazamiento 3D que crea un efecto visual dinámico e inmersivo, sincronizado con el scroll del usuario para generar una experiencia interactiva.",
       technologies: ["NextJs", "Css", "ThreeJs"],
-      videoUrl:Modelo_VIDEO,
+      videoUrl: Modelo_VIDEO,
       thumbnail: TW_3D
     },
     {
@@ -41,11 +55,10 @@ const ProjectsSection = () => {
       videoUrl: Frepool_VIDEO,
       thumbnail: MAP_images
     },
-
   ];
 
   return (
-    <section id="proyects" className="min-h-screen  py-16 px-4  full-width-blur">
+    <section id="proyects" className="min-h-screen py-16 px-4 full-width-blur">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -60,7 +73,6 @@ const ProjectsSection = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-
             <div
               key={project.id}
               className="group relative bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden hover:scale-105 transition-all duration-500 ease-out"
@@ -96,15 +108,29 @@ const ProjectsSection = () => {
               {/* Video/Thumbnail Container */}
               <div className="relative h-48 overflow-hidden">
                 {hoveredProject === project.id ? (
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  >
-                    <source src={project.videoUrl} type="video/mp4" />
-                    Tu navegador no soporta videos HTML5.
-                  </video>
+                  <div className="relative w-full h-full">
+                    {/* Spinner de carga */}
+                    {loadingVideos[project.id] && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gray-900/80 z-10">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+                      </div>
+                    )}
+
+                    <video
+                      ref={el => videoRefs.current[project.id] = el}
+                      autoPlay
+                      muted
+                      loop
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      onLoadStart={() => handleVideoLoadStart(project.id)}
+                      onCanPlay={() => handleVideoCanPlay(project.id)}
+                      onError={() => handleVideoError(project.id)}
+                      preload="metadata"
+                    >
+                      <source src={project.videoUrl} type="video/mp4" />
+                      Tu navegador no soporta videos HTML5.
+                    </video>
+                  </div>
                 ) : (
                   <img
                     src={project.thumbnail}

@@ -1,5 +1,30 @@
 /* iam */
-/* Estilos para el efecto typewriter */
+
+/*
+   body:has(#background-mask) {
+          background-color: transparent;
+        }
+        #background-mask {
+
+          mask-image: url('./../circle.svg');;
+          mask-position: center;
+          mask-repeat: no-repeat;
+          mask-size: 50px;
+
+          animation: lock-reveal 10s forwards ease-in-out ;
+        }
+
+        @keyframes lock-reveal {
+          0% {
+            mask-size: 50px;
+
+          }
+          100% {
+            mask-size: 1000vh;
+
+          }
+        } */
+
 .typewriter-cursor {
   font-weight: normal;
   color: #ffffff;
