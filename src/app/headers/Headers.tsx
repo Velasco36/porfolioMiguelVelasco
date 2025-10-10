@@ -2,9 +2,8 @@
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
  import Image from "next/image";
- 
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSoundPlaying, setIsSoundPlaying] = useState(false);
