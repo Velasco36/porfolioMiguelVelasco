@@ -4,8 +4,7 @@ import React, { useState, useRef } from 'react';
 const ProjectsSection = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   const [loadingVideos, setLoadingVideos] = useState<{ [key: number]: boolean }>({});
-  const videoRefs = useRef<{ [key: number]: HTMLVideoElement | null }>({});
-
+const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({});
   // videos
   const TW_VIDEO = "/video/Tw.mp4";
   const Modelo_VIDEO = "/video/Modelo2.mp4";
@@ -117,7 +116,10 @@ const ProjectsSection = () => {
                     )}
 
                     <video
-                      ref={el => videoRefs.current[project.id] = el}
+                     ref={el => {
+                      videoRefs.current[project.id] = el;
+                    }}
+
                       autoPlay
                       muted
                       loop
