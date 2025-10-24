@@ -2,7 +2,24 @@
 
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 
-export default function HackathonCard({ project }) {
+interface Project {
+  backgroundImage: string;
+  video?: string;
+  title: string;
+  status: string;
+  year: string;
+  description: string;
+  tags: string[];
+  borderColor?: string;
+  gradient?: string;
+  buttonGradient?: string;
+}
+
+interface HackathonCardProps {
+  project: Project;
+}
+
+export default function HackathonCard({ project }: HackathonCardProps) {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -10,9 +27,10 @@ export default function HackathonCard({ project }) {
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef(null);
 
+
   // Mostrar video después de un delay cuando se hace hover
-  useEffect(() => {
-    let timeoutId;
+useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
     if (hovered && !showVideo) {
       timeoutId = setTimeout(() => {
         setShowVideo(true);
@@ -23,7 +41,7 @@ export default function HackathonCard({ project }) {
     return () => clearTimeout(timeoutId);
   }, [hovered, showVideo]);
 
-  const handleMouseMove = useCallback((e) => {
+    const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
