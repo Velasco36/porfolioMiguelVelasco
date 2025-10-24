@@ -1,6 +1,7 @@
 
 import Header from "./headers/Headers";
 import ContactSection from "./Pages/Contact";
+import HackathonSection from "./Pages/Hackathon";
 import IAM from "./Pages/IAM";
 import InfiniteCarousel from "./Pages/InfiniteCarousel";
 import Modelo from "./Pages/Modelo";
@@ -18,6 +19,7 @@ export default function Home() {
   <Timeline />
   <ProjectsSection />
   <Testimonios/>
+  <HackathonSection />
   <ContactSection/>
 </div>
   );

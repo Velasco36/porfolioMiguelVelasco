@@ -96,9 +96,7 @@ const Header = () => {
               <Link href="/" className="text-white hover:text-purple-200 font-medium">
                 Inicio
               </Link>
-              <Link href="/" className="text-white hover:text-purple-200 font-medium">
-                Servicios
-              </Link>
+             
               <Link href="/" className="text-white hover:text-purple-200 font-medium">
                 Contacto
               </Link>
@@ -130,7 +128,7 @@ const Header = () => {
               </button>
             </nav>
              <nav className="md:hidden flex space-x-8 items-center">
-            
+
 
               {/* Botón sonido */}
               <button

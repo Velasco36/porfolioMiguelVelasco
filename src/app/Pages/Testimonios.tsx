@@ -182,8 +182,8 @@ const Testimonios = () => {
     {
       id: 2,
       contactData: {
-        name: "Jarrod Garcia",
-        initials: "JG",
+        name: "Alejandro Garcia",
+        initials: "AG",
         avatarColor: "bg-gray-400"
       },
       responseText: "¡Súper profesional! 💯 Trabajé con él en mi página web y quedó perfecta. Muy recomendado 👌"
@@ -200,7 +200,7 @@ const Testimonios = () => {
     {
       id: 4,
       contactData: {
-        name: "Daniel Ortis",
+        name: "Daniel Ortiz",
         initials: "DO",
          avatarColor: "bg-gray-400"
       },
